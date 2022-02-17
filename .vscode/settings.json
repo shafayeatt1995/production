@@ -1,0 +1,17 @@
+{
+	"vetur.format.defaultFormatterOptions": {
+		"js-beautify-html": {
+			"wrap_attributes": "auto",
+		},
+		"prettier": {
+			"parser": "css"
+		},
+		"editor.tabSize": 4,
+		"editor.insertTabs": true,
+	},
+	"editor.quickSuggestions": {
+		"strings": true,
+	},
+	"editor.insertTabs": false,
+	"editor.tabSize": 4,
+}
