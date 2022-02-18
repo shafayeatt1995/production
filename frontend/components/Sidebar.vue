@@ -14,6 +14,28 @@
 					</nuxt-link>
 				</li>
 				<li class="sidebar-dropdown">
+					<a href="#" class="has-dropdown" :class="buyer || route.substring(18, 23) === 'buyer' ? 'dropdown-active' : ''" @click.prevent="buyer = !buyer">
+						<i>
+							<icon :icon="['fas', 'user-tie']"></icon>
+						</i>
+						<span>Buyer
+							<i :class="buyer">
+								<icon :icon="['fas', 'chevron-right']"></icon>
+							</i>
+						</span>
+					</a>
+					<transition name="slide" mode="out-in">
+						<ul class="sidebar-dropdown-menu" v-if="buyer || route.substring(18, 23) === 'buyer'">
+							<li>
+								<nuxt-link :to="{name: 'dashboard-sadmin-buyer'}">All Buyer</nuxt-link>
+							</li>
+							<li>
+								<nuxt-link :to="{name: 'dashboard-sadmin-buyer-create'}">Create Buyer</nuxt-link>
+							</li>
+						</ul>
+					</transition>
+				</li>
+				<li class="sidebar-dropdown">
 					<a href="#" class="has-dropdown" :class="sidebarUser || route.substring(18, 22) === 'user' ? 'dropdown-active' : ''" @click.prevent="sidebarUser = !sidebarUser">
 						<i>
 							<icon :icon="['fas', 'users']"></icon>
@@ -51,6 +73,7 @@
 			return {
 				route: "",
 				sidebarUser: false,
+				buyer: false,
 			};
 		},
 

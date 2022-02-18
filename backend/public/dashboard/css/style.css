@@ -2307,6 +2307,8 @@ h6 .badge {
 
 .navbar .nav-link.nav-link-user img {
 	width: 30px;
+	height: 30px;
+	object-fit: cover;
 }
 
 .navbar .nav-link.nav-link-img {

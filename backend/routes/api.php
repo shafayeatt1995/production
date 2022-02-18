@@ -23,13 +23,14 @@ Route::group(['middleware' => 'api', 'namespace' => 'App\Http\Controllers\Api'],
     Route::post('update-user/{id}', 'UserController@updatUser');
 
 
-    // //Brand Controller
-    // Route::get('brand', 'BrandController@index');
-    // Route::get('edit-brand/{id}', 'BrandController@editBrand');
-    // Route::post('create-brand', 'BrandController@createBrand');
-    // Route::post('update-brand/{id}', 'BrandController@updateBrand');
-    // Route::post('delete-brand', 'BrandController@deleteBrand');
-    // Route::post('search-brand', 'BrandController@searchBrand');
+    //Buyer Controller
+    Route::get('buyer', 'BuyerController@index');
+    Route::get('edit-buyer/{id}', 'BuyerController@editBuyer');
+    Route::get('list-buyer/{id}', 'BuyerController@listBuyer');
+    Route::post('create-buyer', 'BuyerController@createBuyer');
+    Route::post('update-buyer/{id}', 'BuyerController@updateBuyer');
+    Route::post('delete-buyer', 'BuyerController@deleteBuyer');
+    Route::post('search-buyer', 'BuyerController@searchBuyer');
 
     // //Category Controller
     // Route::get('category', 'CategoryController@index');
