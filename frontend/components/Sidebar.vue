@@ -36,6 +36,28 @@
 					</transition>
 				</li>
 				<li class="sidebar-dropdown">
+					<a href="#" class="has-dropdown" :class="style || route.substring(18, 23) === 'style' ? 'dropdown-active' : ''" @click.prevent="style = !style">
+						<i>
+							<icon :icon="['fas', 'vest']"></icon>
+						</i>
+						<span>Style
+							<i :class="style">
+								<icon :icon="['fas', 'chevron-right']"></icon>
+							</i>
+						</span>
+					</a>
+					<transition name="slide" mode="out-in">
+						<ul class="sidebar-dropdown-menu" v-if="style || route.substring(18, 23) === 'style'">
+							<li>
+								<nuxt-link :to="{name: 'dashboard-sadmin-style'}">All Style</nuxt-link>
+							</li>
+							<li>
+								<nuxt-link :to="{name: 'dashboard-sadmin-style-create'}">Create Style</nuxt-link>
+							</li>
+						</ul>
+					</transition>
+				</li>
+				<li class="sidebar-dropdown">
 					<a href="#" class="has-dropdown" :class="sidebarUser || route.substring(18, 22) === 'user' ? 'dropdown-active' : ''" @click.prevent="sidebarUser = !sidebarUser">
 						<i>
 							<icon :icon="['fas', 'users']"></icon>
@@ -74,6 +96,7 @@
 				route: "",
 				sidebarUser: false,
 				buyer: false,
+				style: false,
 			};
 		},
 

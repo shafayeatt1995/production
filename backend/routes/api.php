@@ -26,11 +26,20 @@ Route::group(['middleware' => 'api', 'namespace' => 'App\Http\Controllers\Api'],
     //Buyer Controller
     Route::get('buyer', 'BuyerController@index');
     Route::get('edit-buyer/{id}', 'BuyerController@editBuyer');
-    Route::get('list-buyer/{id}', 'BuyerController@listBuyer');
+    Route::get('list-buyer', 'BuyerController@listBuyer');
     Route::post('create-buyer', 'BuyerController@createBuyer');
     Route::post('update-buyer/{id}', 'BuyerController@updateBuyer');
     Route::post('delete-buyer', 'BuyerController@deleteBuyer');
     Route::post('search-buyer', 'BuyerController@searchBuyer');
+
+    //Style Controller
+    Route::get('style', 'StyleController@index');
+    Route::get('edit-style/{id}', 'StyleController@editStyle');
+    Route::post('create-style', 'StyleController@createStyle');
+    Route::post('update-style/{id}', 'StyleController@updateStyle');
+    Route::post('delete-style', 'StyleController@deleteStyle');
+    Route::post('search-style', 'StyleController@searchStyle');
+    Route::post('status-style/{id}', 'StyleController@statusStyle');
 
     // //Category Controller
     // Route::get('category', 'CategoryController@index');

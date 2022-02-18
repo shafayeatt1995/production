@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Buyer extends Model
+class Style extends Model
 {
     use HasFactory;
 
-    public function styles()
+    public function buyer()
     {
-        return $this->hasMany(Style::class);
+        return $this->belongsTo(Buyer::class);
     }
 }
